@@ -1,0 +1,94 @@
+
+    body {
+        font-family: Arial, sans-serif; 
+        background-color: #f0f4f8; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .quiz-container {
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 10px; 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+        max-width: 500px;
+        width: 100%;
+    }
+
+    h4 {
+        color: #555;
+        margin-left: 0 !important; 
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    fieldset {
+        border: none; 
+        padding: 0;
+        margin: 0;
+    }
+
+    legend {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .choice-option {
+    display: flex; /* Используем flexbox для выравнивания input и текста */
+    align-items: center; /* Выравниваем по центру вертикально */
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer; /* Делает всю область похожей на кнопку */
+    transition: background-color 0.3s, border-color 0.3s;
+    width: 100%; /* Занимает всю доступную ширину */
+    box-sizing: border-box; /* Учитывает padding и border в ширине */
+}
+
+.choice-option:hover {
+    background-color: #e9ecef;
+    border-color: #007bff;
+}
+
+/* Стилизация состояния "выбрано" */
+/* Используем селектор :checked для изменения стиля родительского label */
+input[type="radio"]:checked + span {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Стили самой радиокнопки */
+input[type="radio"] {
+    margin-right: 15px; /* Отступ между кнопкой и текстом */
+    /* Увеличиваем размер для удобства, если нужно */
+    transform: scale(1.2); 
+}
+
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+        background-color: #0056b3;
+    }

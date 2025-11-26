@@ -7,16 +7,13 @@ if (isset($_POST['answer'])) {
 
   switch ($_POST['answer']) {
     case '1':
-      $sql = "INSERT INTO answer5_1 (time) VALUES ('$time')";
+      $sql = "INSERT INTO answer3_1 (time) VALUES ('$time')";
       break;
     case '2':
-      $sql = "INSERT INTO answer5_2 (time) VALUES ('$time')";
+      $sql = "INSERT INTO answer3_2 (time) VALUES ('$time')";
       break;
     case '3':
-      $sql = "INSERT INTO answer5_3 (time) VALUES ('$time')";
-      break;
-    case '4':
-      $sql = "INSERT INTO answer5_4 (time) VALUES ('$time')";
+      $sql = "INSERT INTO answer3_3 (time) VALUES ('$time')";
       break;
     default:
       echo "";

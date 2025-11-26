@@ -120,7 +120,7 @@
 
 <a href="./del_result.php?del=1">Удалить голоса</a>
 <br>
-<a href="./result.php">Вернуться к результатам</a>
+<a href="./ajax_view/result.php">Вернуться к результатам</a>
 
 </body>
 

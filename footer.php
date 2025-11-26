@@ -1,6 +1,6 @@
-      <br>
+
       <div>
-        <button type="submit">Отправить ответ</button>
+        <button type="submit" class="submit-button">Отправить ответ</button>
       </div>
     </fieldset>
   </form>

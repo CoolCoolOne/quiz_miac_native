@@ -1,11 +1,75 @@
-.results{
-font-size: 20px;
-display: flex;
-flex-direction:column-reverse;
-justify-content: center;
+.results {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
 }
 
-.text{
+.text {
     margin-top: 20px;
     margin-left: 30px;
+}
+
+
+.slide-container {
+    width: 100%;
+    max-width: 800px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.question-header {
+    background-color: #9DC3E6;
+    border: 1px solid #41719C;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* КОНТЕЙНЕР ДЛЯ ГРУППЫ ОТВЕТОВ */
+.answer-group {
+    margin-bottom: 10px;
+    /* ДОБАВЛЯЕТ ПРОМЕЖУТОК МЕЖДУ СТРОКАМИ */
+}
+
+/* КОНТЕЙНЕР СТРОКИ: Используем CSS Grid для гарантированной одинаковой высоты ячеек */
+.results-table {
+    display: grid;
+    /* Определяем 3 столбца: 3 части для первого, 1 часть для второго, 1 часть для третьего */
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 5px;
+    /* Расстояние между ячейками внутри строки */
+    font-size: 0.75rem;
+}
+
+/* ЯЧЕЙКА: Flexbox внутри ячейки для выравнивания контента */
+.table-cell {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    /* Выравнивает текст вертикально по центру */
+    min-height: 40px;
+    /* Минимальная высота ячейки */
+
+    /* СДЕЛАНО ПО ЗАПРОСУ: Весь текст жирный */
+    font-weight: bold;
+}
+
+/* Специальный класс для зеленой строки (правильный ответ) */
+.row-correct {
+    background-color: #C5E0B4;
+    border-color: #548235;
+    color: #000;
+}
+
+.row-default {
+    background-color: #DEEBF7;
+    border-color: #41719C;
+    color: #2E75B6;
 }

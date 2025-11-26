@@ -17,8 +17,8 @@
 
         <?php
         ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+        ini_set('display_startup_errors', 0);
+        error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
         require_once '../connect.php';
 
@@ -121,7 +121,7 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                                                 <?= $questions[0]['answer1'] ?>
                                         </div>
                                         <!-- Столбец 2: Статистика 1 -->
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" id="q1-a1-stats">
                                                 Отв: <?= $answer1_1 ?> / <?= $p1_1 ?>%
                                         </div>
                                         <!-- Столбец 3: Статистика 2 -->
@@ -132,22 +132,22 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                         <!-- СТРОКА 2 (Обычная строка) -->
                         <div class="answer-group">
                                 <div class="results-table">
-                                        <div class="table-cell row-default"">
-                       <?= $questions[0]['answer2'] ?>
-                    </div>
-                    <div class=" table-cell row-default"">
+                                        <div class="table-cell row-default" >
+                                                <?= $questions[0]['answer2'] ?>
+                                        </div>
+                                        <div class=" table-cell row-default" id="q1-a2-stats">
                                                 Отв: <?= $answer1_2 ?> / <?= $p1_2 ?>%
                                         </div>
                                 </div>
                         </div>
 
                         <!-- СТРОКА 3 (Обычная строка) -->
-                        <div class="answer-group">
+                        <div class=" answer-group">
                                 <div class="results-table">
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" >
                                                 <?= $questions[0]['answer3'] ?>
                                         </div>
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" id="q1-a3-stats">
                                                 Отв: <?= $answer1_3 ?> / <?= $p1_3 ?>%
                                         </div>
 
@@ -164,28 +164,28 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                         </div>
 
 
-                        <!-- СТРОКА 1 (Зеленая строка) -->
+
                         <div class="answer-group">
                                 <div class="results-table">
-                                        <!-- Столбец 1: Вариант ответа -->
-                                        <div class="table-cell row-default"">
+
+                                        <div class="table-cell row-default" >
                                                 <?= $questions[1]['answer1'] ?>
                                         </div>
                                         <!-- Столбец 2: Статистика 1 -->
-                                        <div class="table-cell row-default"">
+                                        <div class=" table-cell row-default" id="q2-a1-stats">
                                                 Отв: <?= $answer2_1 ?> / <?= $p2_1 ?>%
                                         </div>
 
                                 </div>
                         </div>
 
-                        <!-- СТРОКА 2 (Обычная строка) -->
+
                         <div class="answer-group">
                                 <div class="results-table">
                                         <div class="table-cell row-default">
                                                 <?= $questions[1]['answer2'] ?>
                                         </div>
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" id="q2-a2-stats">
                                                 Отв: <?= $answer2_2 ?> / <?= $p2_2 ?>%
                                         </div>
                                 </div>
@@ -197,7 +197,7 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                                         <div class="table-cell row-default">
                                                 <?= $questions[1]['answer3'] ?>
                                         </div>
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" id="q2-a3-stats">
                                                 Отв: <?= $answer2_3 ?> / <?= $p2_3 ?>%
                                         </div>
                                 </div>
@@ -225,7 +225,7 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                                                 <?= $questions[2]['answer1'] ?>
                                         </div>
                                         <!-- Столбец 2: Статистика 1 -->
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" id="q3-a1-stats">
                                                 Отв: <?= $answer3_1 ?> / <?= $p3_1 ?>%
                                         </div>
                                 </div>
@@ -234,10 +234,10 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                         <!-- СТРОКА 2 (Обычная строка) -->
                         <div class="answer-group">
                                 <div class="results-table">
-                                        <div class="table-cell row-default"">
+                                        <div class="table-cell row-default">
                                                 <?= $questions[2]['answer2'] ?>
                                         </div>
-                                        <div class="table-cell row-default"">
+                                        <div class=" table-cell row-default" id="q3-a2-stats">
                                                 Отв: <?= $answer3_2 ?> / <?= $p3_2 ?>%
                                         </div>
                                 </div>
@@ -249,7 +249,7 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
                                         <div class="table-cell row-default">
                                                 <?= $questions[2]['answer3'] ?>
                                         </div>
-                                        <div class="table-cell row-default">
+                                        <div class="table-cell row-default" id="q3-a3-stats">
                                                 Отв: <?= $answer3_3 ?> / <?= $p3_3 ?>%
                                         </div>
                                 </div>
@@ -272,7 +272,7 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
         <hr>
 
-        <h3><a href="./result.php">Обновить страницу</a></h3>
+        <h3><a href="../new_view/result.php">Старый вариант таблицы - без автообновления</a></h3>
 
         <hr>
 
@@ -284,7 +284,33 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
         <hr>
 
+        <script>
+                // Функция для получения и обновления данных
+                function updatePollResults() {
+                        fetch('result_gen.php')
+                                .then(response => response.json())
+                                .then(data => {
+                                        document.getElementById('q1-a1-stats').innerText = `Отв: ${data.counts.answer1_1} / ${data.percents.p1_1}%`;
+                                        document.getElementById('q1-a2-stats').innerText = `Отв: ${data.counts.answer1_2} / ${data.percents.p1_2}%`;
+                                        document.getElementById('q1-a3-stats').innerText = `Отв: ${data.counts.answer1_3} / ${data.percents.p1_3}%`;
 
+                                        document.getElementById('q2-a1-stats').innerText = `Отв: ${data.counts.answer2_1} / ${data.percents.p2_1}%`;
+                                        document.getElementById('q2-a2-stats').innerText = `Отв: ${data.counts.answer2_2} / ${data.percents.p2_2}%`;
+                                        document.getElementById('q2-a3-stats').innerText = `Отв: ${data.counts.answer2_3} / ${data.percents.p2_3}%`;
+
+                                        document.getElementById('q3-a1-stats').innerText = `Отв: ${data.counts.answer3_1} / ${data.percents.p3_1}%`;
+                                        document.getElementById('q3-a2-stats').innerText = `Отв: ${data.counts.answer3_2} / ${data.percents.p3_2}%`;
+                                        document.getElementById('q3-a3-stats').innerText = `Отв: ${data.counts.answer3_3} / ${data.percents.p3_3}%`;
+                                })
+                                .catch(error => console.error('Ошибка при получении данных:', error));
+                }
+
+                // Вызываем функцию обновления при загрузке страницы
+                updatePollResults();
+
+                // Устанавливаем интервал для автоматического обновления каждые 5 секунд
+                setInterval(updatePollResults, 5000); 
+        </script>
 
 </body>
 

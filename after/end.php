@@ -7,16 +7,13 @@ if (isset($_POST['answer'])) {
 
   switch ($_POST['answer']) {
     case '1':
-      $sql = "INSERT INTO a_answer5_1 (time) VALUES ('$time')";
+      $sql = "INSERT INTO a_answer3_1 (time) VALUES ('$time')";
       break;
     case '2':
-      $sql = "INSERT INTO a_answer5_2 (time) VALUES ('$time')";
+      $sql = "INSERT INTO a_answer3_2 (time) VALUES ('$time')";
       break;
     case '3':
-      $sql = "INSERT INTO a_answer5_3 (time) VALUES ('$time')";
-      break;
-    case '4':
-      $sql = "INSERT INTO a_answer5_4 (time) VALUES ('$time')";
+      $sql = "INSERT INTO a_answer3_3 (time) VALUES ('$time')";
       break;
     default:
       echo "";
@@ -31,7 +28,7 @@ $pdo->exec($sql);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico"><!-- 32×32 -->
+  <link rel="icon" href="favicon.ico">
   <title>Опрос</title>
 </head>
 <body>

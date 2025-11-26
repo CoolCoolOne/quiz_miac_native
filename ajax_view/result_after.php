@@ -17,8 +17,8 @@
 
     <?php
     ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+    ini_set('display_startup_errors', 0);
+    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
     require_once '../connect.php';
 
@@ -142,8 +142,8 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
     echo '<div class="pie">';
 
     $sql = "SELECT * FROM questions";
-$questions = $pdo->query($sql);
-$questions = $questions->fetchAll(PDO::FETCH_ASSOC);
+    $questions = $pdo->query($sql);
+    $questions = $questions->fetchAll(PDO::FETCH_ASSOC);
 
     ?>
 
@@ -158,186 +158,135 @@ $questions = $questions->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+        <!-- Вопрос 1 -->
         <div class="slide-container">
-
-            <!-- Заголовок вопроса 1 -->
+            <!-- Заголовок вопроса 1 (STATIC) -->
             <div class="question-header">
                 <?= $questions[0]['question'] ?>
             </div>
 
-            <?php
-            // **ВАЖНО**: Здесь должны быть доступны все ваши переменные:
-            // $answer1_1, $p1_1, $a_answer1_1, $a_p1_1 и т.д.
-            ?>
-
-            <!-- СТРОКА 1 (Зеленая строка) -->
+            <!-- СТРОКА 1 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <!-- Столбец 1: Вариант ответа -->
+                    <!-- Вариант ответа (STATIC) -->
                     <div class="table-cell row-default">
                         <?= $questions[0]['answer1'] ?>
                     </div>
-                    <!-- Столбец 2: Статистика 1 -->
-                    <div class="table-cell row-default">
+                    <!-- Статистика 1 (DYNAMIC ID) -->
+                    <div class="table-cell row-default" id="q1-a1-stats-main">
                         Отв: <?= $answer1_1 ?> / <?= $p1_1 ?>%
                     </div>
-                    <!-- Столбец 3: Статистика 2 -->
-                    <div class="table-cell row-default">
+                    <!-- Статистика 2 (DYNAMIC ID) -->
+                    <div class="table-cell row-default" id="q1-a1-stats-alt">
                         Отв: <?= $a_answer1_1 ?> / <?= $a_p1_1 ?>%
                     </div>
                 </div>
             </div>
 
-            <!-- СТРОКА 2 (Обычная строка) -->
+            <!-- СТРОКА 2 -->
             <div class="answer-group">
                 <div class="results-table">
                     <div class="table-cell row-correct">
-                       <?= $questions[0]['answer2'] ?>
+                        <?= $questions[0]['answer2'] ?>
                     </div>
-                    <div class="table-cell row-correct">
+                    <div class="table-cell row-correct" id="q1-a2-stats-main">
                         Отв: <?= $answer1_2 ?> / <?= $p1_2 ?>%
                     </div>
-                    <div class="table-cell row-correct">
+                    <div class="table-cell row-correct" id="q1-a2-stats-alt">
                         Отв: <?= $a_answer1_2 ?> / <?= $a_p1_2 ?>%
                     </div>
                 </div>
             </div>
 
-            <!-- СТРОКА 3 (Обычная строка) -->
+            <!-- СТРОКА 3 -->
             <div class="answer-group">
                 <div class="results-table">
                     <div class="table-cell row-default">
                         <?= $questions[0]['answer3'] ?>
                     </div>
-                    <div class="table-cell row-default">
+                    <div class="table-cell row-default" id="q1-a3-stats-main">
                         Отв: <?= $answer1_3 ?> / <?= $p1_3 ?>%
                     </div>
-                    <div class="table-cell row-default">
+                    <div class="table-cell row-default" id="q1-a3-stats-alt">
                         Отв: <?= $a_answer1_3 ?> / <?= $a_p1_3 ?>%
                     </div>
                 </div>
             </div>
-
         </div>
 
+        <!-- Вопрос 2 -->
         <div class="slide-container">
-
-            <!-- Заголовок вопроса 1 -->
+            <!-- Заголовок вопроса 2 (STATIC) -->
             <div class="question-header">
                 <?= $questions[1]['question'] ?>
             </div>
-
-            <?php
-            // **ВАЖНО**: Здесь должны быть доступны все ваши переменные:
-            // $answer1_1, $p1_1, $a_answer1_1, $a_p1_1 и т.д.
-            ?>
-
-            <!-- СТРОКА 1 (Зеленая строка) -->
+            <!-- ... (Добавьте ID для Q2 по аналогии) ... -->
+            <!-- Q2 a1 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <!-- Столбец 1: Вариант ответа -->
-                    <div class="table-cell row-correct">
-                        <?= $questions[1]['answer1'] ?>
+                    <div class="table-cell row-correct"> <?= $questions[1]['answer1'] ?> </div>
+                    <div class="table-cell row-correct" id="q2-a1-stats-main"> Отв: <?= $answer2_1 ?> / <?= $p2_1 ?>%
                     </div>
-                    <!-- Столбец 2: Статистика 1 -->
-                    <div class="table-cell row-correct">
-                        Отв: <?= $answer2_1 ?> / <?= $p2_1 ?>%
-                    </div>
-                    <!-- Столбец 3: Статистика 2 -->
-                    <div class="table-cell row-correct">
-                        Отв: <?= $a_answer2_1 ?> / <?= $a_p2_1 ?>%
+                    <div class="table-cell row-correct" id="q2-a1-stats-alt"> Отв: <?= $a_answer2_1 ?> / <?= $a_p2_1 ?>%
                     </div>
                 </div>
             </div>
-
-            <!-- СТРОКА 2 (Обычная строка) -->
+            <!-- Q2 a2 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <div class="table-cell row-default">
-                       <?= $questions[1]['answer2'] ?>
+                    <div class="table-cell row-default"> <?= $questions[1]['answer2'] ?> </div>
+                    <div class="table-cell row-default" id="q2-a2-stats-main"> Отв: <?= $answer2_2 ?> / <?= $p2_2 ?>%
                     </div>
-                    <div class="table-cell row-default">
-                        Отв: <?= $answer2_2 ?> / <?= $p2_2 ?>%
-                    </div>
-                    <div class="table-cell row-default">
-                        Отв: <?= $a_answer2_2 ?> / <?= $a_p2_2 ?>%
+                    <div class="table-cell row-default" id="q2-a2-stats-alt"> Отв: <?= $a_answer2_2 ?> / <?= $a_p2_2 ?>%
                     </div>
                 </div>
             </div>
-
-            <!-- СТРОКА 3 (Обычная строка) -->
+            <!-- Q2 a3 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <div class="table-cell row-default">
-                        <?= $questions[1]['answer3'] ?>
+                    <div class="table-cell row-default"> <?= $questions[1]['answer3'] ?> </div>
+                    <div class="table-cell row-default" id="q2-a3-stats-main"> Отв: <?= $answer2_3 ?> / <?= $p2_3 ?>%
                     </div>
-                    <div class="table-cell row-default">
-                        Отв: <?= $answer2_3 ?> / <?= $p2_3 ?>%
-                    </div>
-                    <div class="table-cell row-default">
-                        Отв: <?= $a_answer2_3 ?> / <?= $a_p2_3 ?>%
+                    <div class="table-cell row-default" id="q2-a3-stats-alt"> Отв: <?= $a_answer2_3 ?> / <?= $a_p2_3 ?>%
                     </div>
                 </div>
             </div>
-
         </div>
 
+        <!-- Вопрос 3 -->
         <div class="slide-container">
-
-            <!-- Заголовок вопроса 1 -->
+            <!-- Заголовок вопроса 3 (STATIC) -->
             <div class="question-header">
                 <?= $questions[2]['question'] ?>
             </div>
-
-            <?php
-            // **ВАЖНО**: Здесь должны быть доступны все ваши переменные:
-            // $answer1_1, $p1_1, $a_answer1_1, $a_p1_1 и т.д.
-            ?>
-
-            <!-- СТРОКА 1 (Зеленая строка) -->
+            <!-- ... (Добавьте ID для Q3 по аналогии) ... -->
+            <!-- Q3 a1 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <!-- Столбец 1: Вариант ответа -->
-                    <div class="table-cell row-default">
-                        <?= $questions[2]['answer1'] ?>
+                    <div class="table-cell row-default"> <?= $questions[2]['answer1'] ?> </div>
+                    <div class="table-cell row-default" id="q3-a1-stats-main"> Отв: <?= $answer3_1 ?> / <?= $p3_1 ?>%
                     </div>
-                    <!-- Столбец 2: Статистика 1 -->
-                    <div class="table-cell row-default">
-                        Отв: <?= $answer3_1 ?> / <?= $p3_1 ?>%
-                    </div>
-                    <!-- Столбец 3: Статистика 2 -->
-                    <div class="table-cell row-default">
-                        Отв: <?= $a_answer3_1 ?> / <?= $a_p3_1 ?>%
+                    <div class="table-cell row-default" id="q3-a1-stats-alt"> Отв: <?= $a_answer3_1 ?> / <?= $a_p3_1 ?>%
                     </div>
                 </div>
             </div>
-
-            <!-- СТРОКА 2 (Обычная строка) -->
+            <!-- Q3 a2 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <div class="table-cell row-correct">
-                       <?= $questions[2]['answer2'] ?>
+                    <div class="table-cell row-correct"> <?= $questions[2]['answer2'] ?> </div>
+                    <div class="table-cell row-correct" id="q3-a2-stats-main"> Отв: <?= $answer3_2 ?> / <?= $p3_2 ?>%
                     </div>
-                    <div class="table-cell row-correct">
-                        Отв: <?= $answer3_2 ?> / <?= $p3_2 ?>%
-                    </div>
-                    <div class="table-cell row-correct">
-                        Отв: <?= $a_answer3_2 ?> / <?= $a_p3_2 ?>%
+                    <div class="table-cell row-correct" id="q3-a2-stats-alt"> Отв: <?= $a_answer3_2 ?> / <?= $a_p3_2 ?>%
                     </div>
                 </div>
             </div>
-
-            <!-- СТРОКА 3 (Обычная строка) -->
+            <!-- Q3 a3 -->
             <div class="answer-group">
                 <div class="results-table">
-                    <div class="table-cell row-default">
-                        <?= $questions[2]['answer3'] ?>
+                    <div class="table-cell row-default"> <?= $questions[2]['answer3'] ?> </div>
+                    <div class="table-cell row-default" id="q3-a3-stats-main"> Отв: <?= $answer3_3 ?> / <?= $p3_3 ?>%
                     </div>
-                    <div class="table-cell row-default">
-                        Отв: <?= $answer3_3 ?> / <?= $p3_3 ?>%
-                    </div>
-                    <div class="table-cell row-default">
-                        Отв: <?= $a_answer3_3 ?> / <?= $a_p3_3 ?>%
+                    <div class="table-cell row-default" id="q3-a3-stats-alt"> Отв: <?= $a_answer3_3 ?> / <?= $a_p3_3 ?>%
                     </div>
                 </div>
             </div>
@@ -361,7 +310,7 @@ $questions = $questions->fetchAll(PDO::FETCH_ASSOC);
 
     <hr>
 
-    <h3><a href="./result_after.php">Обновить страницу</a></h3>
+    <h3><a href="../new_view/result_after.php">Старый вариант результатов - без автообновления</a></h3>
 
     <hr>
 
@@ -373,7 +322,51 @@ $questions = $questions->fetchAll(PDO::FETCH_ASSOC);
 
     <hr>
 
+    <script>
+        function updatePollResults() {
+            fetch('result_after_gen.php')
+                .then(response => response.json())
+                .then(data => {
+                    // === Вопрос 1 ===
+                    // Main stats
+                    document.getElementById('q1-a1-stats-main').innerText = `Отв: ${data.counts.answer1_1} / ${data.percents.p1_1}%`;
+                    document.getElementById('q1-a2-stats-main').innerText = `Отв: ${data.counts.answer1_2} / ${data.percents.p1_2}%`;
+                    document.getElementById('q1-a3-stats-main').innerText = `Отв: ${data.counts.answer1_3} / ${data.percents.p1_3}%`;
+                    // Alt stats
+                    document.getElementById('q1-a1-stats-alt').innerText = `Отв: ${data.a_counts.a_answer1_1} / ${data.a_percents.a_p1_1}%`;
+                    document.getElementById('q1-a2-stats-alt').innerText = `Отв: ${data.a_counts.a_answer1_2} / ${data.a_percents.a_p1_2}%`;
+                    document.getElementById('q1-a3-stats-alt').innerText = `Отв: ${data.a_counts.a_answer1_3} / ${data.a_percents.a_p1_3}%`;
 
+                    // === Вопрос 2 ===
+                    // Main stats
+                    document.getElementById('q2-a1-stats-main').innerText = `Отв: ${data.counts.answer2_1} / ${data.percents.p2_1}%`;
+                    document.getElementById('q2-a2-stats-main').innerText = `Отв: ${data.counts.answer2_2} / ${data.percents.p2_2}%`;
+                    document.getElementById('q2-a3-stats-main').innerText = `Отв: ${data.counts.answer2_3} / ${data.percents.p2_3}%`;
+                    // Alt stats
+                    document.getElementById('q2-a1-stats-alt').innerText = `Отв: ${data.a_counts.a_answer2_1} / ${data.a_percents.a_p2_1}%`;
+                    document.getElementById('q2-a2-stats-alt').innerText = `Отв: ${data.a_counts.a_answer2_2} / ${data.a_percents.a_p2_2}%`;
+                    document.getElementById('q2-a3-stats-alt').innerText = `Отв: ${data.a_counts.a_answer2_3} / ${data.a_percents.a_p2_3}%`;
+
+                    // === Вопрос 3 ===
+                    // Main stats
+                    document.getElementById('q3-a1-stats-main').innerText = `Отв: ${data.counts.answer3_1} / ${data.percents.p3_1}%`;
+                    document.getElementById('q3-a2-stats-main').innerText = `Отв: ${data.counts.answer3_2} / ${data.percents.p3_2}%`;
+                    document.getElementById('q3-a3-stats-main').innerText = `Отв: ${data.counts.answer3_3} / ${data.percents.p3_3}%`;
+                    // Alt stats
+                    document.getElementById('q3-a1-stats-alt').innerText = `Отв: ${data.a_counts.a_answer3_1} / ${data.a_percents.a_p3_1}%`;
+                    document.getElementById('q3-a2-stats-alt').innerText = `Отв: ${data.a_counts.a_answer3_2} / ${data.a_percents.a_p3_2}%`;
+                    document.getElementById('q3-a3-stats-alt').innerText = `Отв: ${data.a_counts.a_answer3_3} / ${data.a_percents.a_p3_3}%`;
+
+                })
+                .catch(error => console.error('Ошибка при получении данных:', error));
+        }
+
+        // Вызываем функцию обновления при загрузке страницы
+        updatePollResults();
+
+        // Устанавливаем интервал для автоматического обновления каждые 5 секунд
+        setInterval(updatePollResults, 5000); 
+    </script>
 
 </body>
 
